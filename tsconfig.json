@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                // Or "ESNext" for the latest features
+    "module": "NodeNext",              // Or "Node16" for Node.js module resolution
+    "moduleResolution": "NodeNext",    // Or "Bundler" if using modern bundlers
+    "esModuleInterop": true,           // Allows default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                    // Enable all strict type-checking options
+    "skipLibCheck": true,              // Skip type checking of declaration files
+    "outDir": "./dist",                // Output directory for compiled JS (optional, tsx doesn't use it directly)
+    "rootDir": "./src"                 // Root directory for your source files
+  },
+  "include": ["src/**/*.ts"],          // Include all .ts files in src
+  "exclude": ["node_modules"]          // Exclude node_modules
+}
