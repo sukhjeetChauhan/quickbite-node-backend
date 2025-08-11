@@ -21,6 +21,15 @@ export function initMenuItemModel(sequelize: Sequelize) {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      price: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
+      isAvailable: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false,
+      },
       category: {
         type: DataTypes.ENUM('indian', 'asian', 'american', 'mediterranean'),
         allowNull: false,

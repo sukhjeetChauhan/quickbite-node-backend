@@ -17,6 +17,15 @@ export async function up(queryInterface) {
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    isAvailable: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+      allowNull: false,
+    },
     imgurl: {
       type: DataTypes.STRING,
       allowNull: true,
