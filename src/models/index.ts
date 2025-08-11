@@ -9,6 +9,7 @@ import OrderItem, { initOrderItemModel } from './orderItem.js';
 initUserModel(sequelize);
 initMenuItemModel(sequelize);
 initOrderModel(sequelize);
+initOrderItemModel(sequelize);
 
 // 2. Define associations
 // orders table associations
