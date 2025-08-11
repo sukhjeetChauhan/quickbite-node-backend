@@ -42,7 +42,7 @@ export function initMenuItemModel(sequelize: Sequelize) {
     {
       sequelize,
       modelName: 'MenuItem',
-      tableName: 'menuItems',
+      tableName: 'menu_items',
     },
   );
 }

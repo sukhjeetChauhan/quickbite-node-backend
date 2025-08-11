@@ -3,7 +3,7 @@ import { DataTypes } from 'sequelize';
 /** @type {import('sequelize-cli').Migration} */
 
 export async function up(queryInterface) {
-  await queryInterface.createTable('menuItems', {
+  await queryInterface.createTable('menu_items', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -42,5 +42,5 @@ export async function up(queryInterface) {
 }
 
 export async function down(queryInterface) {
-  await queryInterface.dropTable('menuItems');
+  await queryInterface.dropTable('menu_items');
 }
