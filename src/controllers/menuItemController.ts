@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import * as menuItemService from '../services/menuItemService';
+import * as menuItemService from '../services/menuItemService.js';
 
 const router = express.Router();
 

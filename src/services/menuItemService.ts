@@ -1,4 +1,4 @@
-import MenuItem from '../models/menuItem';
+import MenuItem from '../models/menuItem.js';
 import { Attributes, CreationAttributes } from 'sequelize';
 
 type MenuItemType = Attributes<MenuItem>;

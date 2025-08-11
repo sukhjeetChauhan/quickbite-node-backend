@@ -1,4 +1,4 @@
-import OrderItem from '../models/orderItem';
+import OrderItem from '../models/orderItem.js';
 import { Attributes, CreationAttributes } from 'sequelize';
 
 type OrderItemType = Attributes<OrderItem>;

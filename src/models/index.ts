@@ -1,9 +1,9 @@
-import sequelize from '../db';
+import sequelize from '../db/index.js';
 
-import User, { initUserModel } from './user';
-import Order, { initOrderModel } from './order';
-import MenuItem, { initMenuItemModel } from './menuItem';
-import OrderItem, { initOrderItemModel } from './orderItem';
+import User, { initUserModel } from './user.js';
+import Order, { initOrderModel } from './order.js';
+import MenuItem, { initMenuItemModel } from './menuItem.js';
+import OrderItem, { initOrderItemModel } from './orderItem.js';
 
 // 1. Initialize all models
 initUserModel(sequelize);

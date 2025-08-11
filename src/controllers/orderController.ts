@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import * as orderService from '../services/orderService';
+import * as orderService from '../services/orderService.js';
 
 const router = express.Router();
 

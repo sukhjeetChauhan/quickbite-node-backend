@@ -1,4 +1,4 @@
-import User from '../models/user';
+import User from '../models/user.js';
 import { Attributes, CreationAttributes } from 'sequelize';
 
 type UserType = Attributes<User>; // full User type including timestamps

@@ -1,4 +1,4 @@
-import Order from '../models/order';
+import Order from '../models/order.js';
 import { Attributes, CreationAttributes } from 'sequelize';
 
 type OrderType = Attributes<Order>;
