@@ -13,3 +13,17 @@ export async function createUser(user: UserCreateType) {
 export async function getUserById(id: string) {
   return await User.findByPk(id);
 }
+
+// get all users
+export async function getAllUsers() {
+  return await User.findAll();
+}
+
+// update User
+export async function updateUser(id: string, data: Partial<UserType>) {
+  return await User.update(data, { where: { id } });
+}
+
+export async function deleteUser(id: string) {
+  return await User.destroy({ where: { id } });
+}
