@@ -1,6 +1,26 @@
-import { DataTypes, Model, Sequelize } from 'sequelize';
+import {
+  CreationOptional,
+  DataTypes,
+  InferAttributes,
+  InferCreationAttributes,
+  Model,
+  Sequelize,
+} from 'sequelize';
 
-export default class OrderItem extends Model {}
+export default class OrderItem extends Model<
+  InferAttributes<OrderItem>,
+  InferCreationAttributes<OrderItem>
+> {
+  declare id: CreationOptional<number>;
+  declare orderId: number;
+  declare menuItemId: number;
+  declare quantity: number;
+  declare price: string; // DECIMAL returned as string
+
+  // timestamps (optional if timestamps: true)
+  declare createdAt: CreationOptional<Date | undefined>;
+  declare updatedAt: CreationOptional<Date | undefined>;
+}
 export function initOrderItemModel(sequelize: Sequelize) {
   OrderItem.init(
     {
@@ -28,6 +48,8 @@ export function initOrderItemModel(sequelize: Sequelize) {
         type: DataTypes.DECIMAL,
         allowNull: false,
       },
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
     },
     {
       sequelize,

@@ -1,6 +1,26 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import {
+  Model,
+  DataTypes,
+  Sequelize,
+  InferAttributes,
+  InferCreationAttributes,
+  CreationOptional,
+} from 'sequelize';
 
-export default class MenuItem extends Model {}
+export default class MenuItem extends Model<
+  InferAttributes<MenuItem>,
+  InferCreationAttributes<MenuItem>
+> {
+  declare id: CreationOptional<number>;
+  declare name: string;
+  declare description: string | null;
+  declare imgurl: string | null;
+  declare price: string; // DECIMAL is returned as string by default in Sequelize
+  declare isAvailable: boolean;
+  declare category: 'indian' | 'asian' | 'american' | 'mediterranean';
+  declare dietType: 'vegan' | 'vegetarian' | 'paleo' | 'keto' | 'gluten-free' | 'none';
+}
+
 export function initMenuItemModel(sequelize: Sequelize) {
   MenuItem.init(
     {

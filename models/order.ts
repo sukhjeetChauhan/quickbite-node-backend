@@ -1,6 +1,24 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import {
+  Model,
+  DataTypes,
+  Sequelize,
+  CreationOptional,
+  InferAttributes,
+  InferCreationAttributes,
+} from 'sequelize';
 
-export default class Order extends Model {}
+export default class Order extends Model<InferAttributes<Order>, InferCreationAttributes<Order>> {
+  declare id: CreationOptional<number>;
+  declare userId: string;
+  declare totalPrice: string; // DECIMAL returned as string
+  declare address: string;
+  declare status: 'pending' | 'preparing' | 'completed' | 'cancelled';
+  declare paymentStatus: 'unpaid' | 'paid' | 'refunded';
+
+  // timestamps (optional if timestamps: true)
+  declare createdAt: CreationOptional<Date | undefined>;
+  declare updatedAt: CreationOptional<Date | undefined>;
+}
 
 export function initOrderModel(sequelize: Sequelize) {
   Order.init(
@@ -32,6 +50,8 @@ export function initOrderModel(sequelize: Sequelize) {
         defaultValue: 'unpaid',
         allowNull: false,
       },
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
     },
     {
       sequelize,
