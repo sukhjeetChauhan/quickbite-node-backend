@@ -25,14 +25,14 @@ router.get('/:id', async (req: Request, res: Response) => {
 });
 
 // Create new order item
-router.post('/', async (req: Request, res: Response) => {
-  try {
-    const newItem = await orderItemService.createOrderItem(req.body);
-    res.status(201).json(newItem);
-  } catch (error) {
-    res.status(400).json({ error: (error as Error).message });
-  }
-});
+// router.post('/', async (req: Request, res: Response) => {
+//   try {
+//     const newItem = await orderItemService.createOrderItem(req.body);
+//     res.status(201).json(newItem);
+//   } catch (error) {
+//     res.status(400).json({ error: (error as Error).message });
+//   }
+// });
 
 // Update order item
 router.put('/:id', async (req: Request, res: Response) => {

@@ -16,7 +16,7 @@ router.get('/', async (_req: Request, res: Response) => {
 // Get order by ID
 router.get('/:id', async (req: Request, res: Response) => {
   try {
-    const order = await orderService.getOrderById(Number(req.params.id));
+    const order = await orderService.getOrderWithItems(Number(req.params.id));
     if (!order) return res.status(404).json({ error: 'Order not found' });
     res.json(order);
   } catch (error) {

@@ -1,8 +1,8 @@
 import OrderItem from '../models/orderItem.js';
-import { Attributes, CreationAttributes } from 'sequelize';
+import { Attributes, BulkCreateOptions, CreationAttributes } from 'sequelize';
 
-type OrderItemType = Attributes<OrderItem>;
-type OrderItemCreateType = CreationAttributes<OrderItem>;
+export type OrderItemType = Attributes<OrderItem>;
+export type OrderItemCreateType = CreationAttributes<OrderItem>;
 
 // Get all order items
 export async function getAllOrderItems() {
@@ -17,6 +17,14 @@ export async function getOrderItemById(id: number) {
 // Create new order item
 export async function createOrderItem(orderItem: OrderItemCreateType) {
   return OrderItem.create(orderItem);
+}
+
+// create multiline orderItems
+export async function createOrderItems(
+  orderItems: OrderItemCreateType[],
+  options?: BulkCreateOptions<OrderItemType>,
+) {
+  return OrderItem.bulkCreate(orderItems, options);
 }
 
 // Update order item by ID
