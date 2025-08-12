@@ -63,6 +63,7 @@ export function initMenuItemModel(sequelize: Sequelize) {
       sequelize,
       modelName: 'MenuItem',
       tableName: 'menu_items',
+      timestamps: false,
     },
   );
 }

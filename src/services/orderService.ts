@@ -17,12 +17,6 @@ type CreateOrderWithItemsInput = {
   items: Omit<OrderItemCreateType, 'orderId'>[];
 };
 
-interface OrderWithItems extends OrderType {
-  OrderItems?: (OrderItemType & {
-    MenuItem?: { name: string };
-  })[];
-}
-
 // Get all orders
 export async function getAllOrders() {
   return Order.findAll();
