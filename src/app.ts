@@ -17,7 +17,7 @@ app.use(cors(corsOptions)); // cors middleware
 app.use(express.json()); // middleware to parse json data
 
 // define controller routes here
-app.use('/user', userController);
+app.use('/users', userController);
 app.use('/menu-items', menuItemController);
 app.use('/orders', orderController);
 app.use('/order-items', orderItemController);

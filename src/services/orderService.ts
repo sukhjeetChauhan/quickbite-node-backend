@@ -60,6 +60,7 @@ export async function getOrderWithItems(id: number) {
 export async function createOrder(data: CreateOrderWithItemsInput) {
   return sequelize.transaction(async (t) => {
     // Step 1: Create the order
+
     const newOrder = await Order.create({ ...data.order }, { transaction: t });
 
     // Step 2: Create the order items (assigning orderId)
@@ -70,6 +71,7 @@ export async function createOrder(data: CreateOrderWithItemsInput) {
       })),
       { transaction: t, returning: false },
     );
+    console.log(newOrder);
 
     return newOrder;
   });

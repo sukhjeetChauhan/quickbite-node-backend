@@ -30,6 +30,7 @@ router.get('/category/:category', async (req: Request, res: Response) => {
     type Category = 'indian' | 'asian' | 'american' | 'mediterranean';
     const category = req.params.category as Category;
     const items = await menuItemService.getMenuItemsByCategory(category);
+
     res.json(items);
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });

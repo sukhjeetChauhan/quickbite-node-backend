@@ -6,7 +6,14 @@ type UserCreateType = CreationAttributes<User>; // fields required to create a u
 
 // create a new user
 export async function createUser(user: UserCreateType) {
-  return User.create(user);
+  console.log(user);
+  try {
+    const userCreated = User.create(user);
+    console.log(await userCreated);
+    return userCreated;
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 // get user by user id

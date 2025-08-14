@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import * as orderService from '../services/orderService.js';
+import { Json } from 'sequelize/lib/utils';
 
 const router = express.Router();
 
@@ -7,6 +8,7 @@ const router = express.Router();
 router.get('/', async (_req: Request, res: Response) => {
   try {
     const orders = await orderService.getAllOrders();
+
     res.json(orders);
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });
