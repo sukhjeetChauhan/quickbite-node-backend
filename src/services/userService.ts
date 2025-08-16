@@ -1,3 +1,4 @@
+import { userInfo } from 'os';
 import User from '../models/user.js';
 import { Attributes, CreationAttributes } from 'sequelize';
 

@@ -40,7 +40,8 @@ router.post('/', async (req: Request, res: Response) => {
 // Update user
 router.put('/:id', async (req, res) => {
   try {
-    const [updatedCount] = await userService.updateUser(req.params.id, req.body);
+    const userId = decodeURIComponent(req.params.id);
+    const [updatedCount] = await userService.updateUser(userId, req.body);
     if (updatedCount === 0) return res.status(404).json({ error: 'User not found or no changes' });
     res.json({ message: 'User updated' });
   } catch (error) {

@@ -106,3 +106,7 @@ Currently **not deployed**.
 ## Author
 
 Built as part of a technical project test.
+
+## API documentation
+
+https://documenter.getpostman.com/view/41481061/2sB3BHkUXh
